@@ -1,0 +1,22 @@
+# Understanding `find()` & the Cursor Object
+O comando `find()` não retorna todos os documentos de uma coleção, caso ela seja muito grande. Em vez disso o comando retorna um `Cursor Object` que é um objeto com MetaDados por baixo dos panos que permite percorrer pelos resultados, por isso em casos cujo a coleção possui muitos documentos, ao final da execuçao temos a sugestão `Type "it" for more`
+
+![find()](Imagens/06.find().png)
+
+## `find().toArray()`
+Retorna um array com todos os documentos, pois ele esgota todo o objeto cursor percorrendo toda a lista de documentos.
+
+```javascript
+db.passengers.find().toArray()
+```
+
+## `find().forEach()`
+Assim como no JavaScript, o comando `forEach()` permite que seja executada alguma operação para o dado em cada documento. O Shell é baseado em JavaScript, portanto podemos utilizar a sintaxe dessa linguagem para executar operações sobre os dados, exemplo:
+
+```javascript
+db.passengers.find().forEach((passengersData) => {printjson(passengersData)})
+```
+
+
+
+
