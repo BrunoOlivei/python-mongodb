@@ -1,4 +1,4 @@
 *.xlsx
-.obsidian
+/.obsidian
 
 Resources/mongod.cfg
